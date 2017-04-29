@@ -6,7 +6,7 @@ it can capture a white pawn that moves straight to the 4th rank either side of i
 if white pawn is in 5th row
 it can capture a black pawn that moves straight to 5th row either side of it.
 
-abstract --> if (||for?) pawn first move -> can_capture? is true -> if opposition pawn y coord is ==1
+abstract --> if previous move is opposition pawn first move && if opposition pawn y coord is ==1 && opposition pawn
 
 
 need to define first move method:
@@ -21,3 +21,6 @@ need to define first move method:
      return true
    end
  end
+
+
+store game state as a series of strings - iterate through the strings to find previous move.
