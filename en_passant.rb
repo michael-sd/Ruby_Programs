@@ -24,3 +24,6 @@ need to define first move method:
 
 
 store game state as a series of strings - iterate through the strings to find previous move.
+
+
+web socket - new technology built into web browsers that
