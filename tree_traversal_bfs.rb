@@ -1,5 +1,6 @@
-class Tree
+require 'byebug'
 
+class Tree
   attr_accessor :payload, :children
 
   def initialize(payload, children)
@@ -9,20 +10,18 @@ class Tree
 
 end
 
-class MyQueue
+def bfs(node, value)
+  queue = []
+  queue.push(node)
 
-  def initialize
-    @queue = []
+  while (queue.size != 0)
+    n = queue.shift
+    puts n.payload
+    n.children.each do |child|
+      queue.push(child)
+    end
+    nil
   end
-
-  def enqueue(item)
-    @queue.push(item)
-  end
-
-  def dequeue
-    @queue.shift
-  end
-
 end
 
 # The "Leaves" of the tree, elements that have no children
@@ -39,17 +38,4 @@ shallow_fifth_node = Tree.new(5, [ninth_node])
 # The "Trunk" of the tree.
 trunk = Tree.new(2, [seventh_node, shallow_fifth_node])
 
-queue = MyQueue.new
-
-queue.enqueue(1)
-queue.enqueue(2)
-puts queue.dequeue
-queue.enqueue(3)
-queue.enqueue(4)
-queue.enqueue(5)
-puts queue.dequeue
-queue.enqueue(6)
-puts queue.dequeue
-puts queue.dequeue
-puts queue.dequeue
-puts queue.dequeue
+bfs(trunk, 11)
