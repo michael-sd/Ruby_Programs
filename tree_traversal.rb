@@ -10,7 +10,7 @@ class Tree
 end
 
 def dfs(node, value)
-  puts "#{node.payload}"
+  puts node.payload
   return node if node.payload == value
   node.children.each do |child|
     node = dfs(child, value)
