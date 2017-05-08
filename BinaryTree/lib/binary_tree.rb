@@ -10,7 +10,8 @@ class BinaryTree
 end
 
 def dfs(node)
-  puts node.payload
+  output_array = []
+  node.payload.push(output_array)
   node.left.each do |l|
     left = node.dfs(l.left) if node.left
   end
