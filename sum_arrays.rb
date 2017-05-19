@@ -1,11 +1,6 @@
 # Sum Numbers
 def sum(numbers)
-  if numbers == []
-    return 0
-  else
-    total = numbers.reduce(:+)
-  end
-  return total.to_f
+  numbers.inject(0, :+)
 end
 
 puts sum([])
