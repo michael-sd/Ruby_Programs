@@ -10,8 +10,8 @@ def averages(arr)
   return output
 end
 
-averages([2, 2, 2, 2, 2])
-averages([2, -2, 2, -2, 2])
-averages([1, 3, 5, 1, -10])
-averages([])
-averages(nil)
+p averages([2, 2, 2, 2, 2])
+p averages([2, -2, 2, -2, 2])
+p averages([1, 3, 5, 1, -10])
+p averages([])
+p averages(nil)
