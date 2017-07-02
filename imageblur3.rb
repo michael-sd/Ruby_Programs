@@ -1,8 +1,6 @@
-require 'pry'
-
 class Image
 
-  def initialize (pixels)      
+  def initialize (pixels)
     @pixels = pixels
   end
 
@@ -14,18 +12,18 @@ class Image
   end
 
   def find_ones
-    ones = []                                      
-    @pixels.each_with_index do |row, row_num|         
-      row.each_with_index do |num, column_num|      
+    ones = []
+    @pixels.each_with_index do |row, row_num|
+      row.each_with_index do |num, column_num|
         ones << [row_num, column_num] if num == 1  ###########
       end
-    end                         
-    ones                       
+    end
+    ones
   end
 
   def blur_once
-    puts "blur once occurred"                   
-    find_ones.each do |point|                    
+    puts "blur once occurred"
+    find_ones.each do |point|
       adjacent_point(point[0]-1, point[1], point[0]>0)
       adjacent_point(point[0]+1, point[1], point[0]<pic_width)
       adjacent_point(point[0], point[1]-1, point[1]>0)
@@ -38,14 +36,14 @@ class Image
   end
 
   def pic_width
-    pic_width = @pixels.length-1                    
+    pic_width = @pixels.length-1
   end
 
 
   def blur(distance)   #Method utilising recursion
     puts distance
     @image = Image.new(@pixels)
-    return @image if distance <= 0 
+    return @image if distance <= 0
     @image.blur_once
     @image.blur(distance - 1)
   end
@@ -76,7 +74,7 @@ image.output_image
 puts
 image.blur(2)
 puts
-image.output_image  
+image.output_image
 
 
 #Notes:
